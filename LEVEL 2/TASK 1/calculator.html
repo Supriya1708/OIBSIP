@@ -4,13 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
 </head>
 <body>
     <div class="container">
-        <div class="screen">
-
+        <div class="calculator">
+             <div class="screen">
+                <div class="row">
+                    <input id="query" type="text">
+                </div>
+                <div class="row">
+                    <input id="result" type="text" placeholder="0">
+                </div>
+             </div>
+             <div class="btns">
+                <div class="row">
+                    <button class="btn" onclick="updateQuery('(')">(</button>
+                    <button class="btn" onclick="updateQuery(')')">)</button>
+                    <button class="btn" onclick="updateQuery('ans')">ans</button>
+                    <button class="btn" onclick="updateQuery('del')">del</button>
+                    <button class="btn" onclick="updateQuery('clear')">clear</button>
+                </div>
+                <div class="row">
+                    <button class="btn" onclick="updateQuery('7')">7</button>
+                    <button class="btn" onclick="updateQuery('8')">8</button>
+                    <button class="btn" onclick="updateQuery('9')">9</button>
+                    <button class="btn" onclick="updateQuery('%')">%</button>
+                    <button class="btn" onclick="updateQuery('√')">√</button>
+                </div>
+                <div class="row">
+                    <button class="btn" onclick="updateQuery('4')">4</button>
+                    <button class="btn" onclick="updateQuery('5')">5</button>
+                    <button class="btn" onclick="updateQuery('6')">6</button>
+                    <button class="btn" onclick="updateQuery('*')">x</button>
+                    <button class="btn" onclick="updateQuery('/')">÷</button>
+                </div>
+                <div class="row">
+                    <button class="btn" onclick="updateQuery('1')">1</button>
+                    <button class="btn" onclick="updateQuery('2')">2</button>
+                    <button class="btn" onclick="updateQuery('3')">3</button>
+                    <button class="btn" onclick="updateQuery('+')">+</button>
+                    <button class="btn" onclick="updateQuery('-')">-</button>
+                </div>
+                <div class="row">
+                    <button class="btn" onclick="updateQuery('.')">.</button>
+                    <button class="btn" onclick="updateQuery('0')">0</button>
+                    <button class="btn" onclick="updateQuery('±')">±</button>
+                    <button type="submit" onclick="output(query.value)" class="btn btn-wide">ENTER</button>
+                </div>
+             </div>
         </div>
-        
     </div>
+    <script src="calculator.js"></script>
 </body>
 </html>
