@@ -14,43 +14,45 @@
                     <input id="query" type="text">
                 </div>
                 <div class="row">
-                    <input id="result" type="text" placeholder="0">
+                    <input id="current_result" type="text" placeholder="0">
                 </div>
              </div>
              <div class="btns">
                 <div class="row">
-                    <button class="btn" onclick="updateQuery('(')">(</button>
-                    <button class="btn" onclick="updateQuery(')')">)</button>
-                    <button class="btn" onclick="updateQuery('ans')">ans</button>
-                    <button class="btn" onclick="updateQuery('del')">del</button>
-                    <button class="btn" onclick="updateQuery('clear')">clear</button>
+                    <button class="btn" onclick="addOperator('%')">%</button>
+                    <button class="btn" onclick="clearQuery('CE')">CE</button>
+                    <button class="btn" onclick="clearQuery('C')">C</button>
+                    <button class="btn" onclick="clearQuery('DEL')" id="del">DEL</button>
                 </div>
                 <div class="row">
-                    <button class="btn" onclick="updateQuery('7')">7</button>
-                    <button class="btn" onclick="updateQuery('8')">8</button>
-                    <button class="btn" onclick="updateQuery('9')">9</button>
-                    <button class="btn" onclick="updateQuery('%')">%</button>
-                    <button class="btn" onclick="updateQuery('√')">√</button>
+                    <button class="btn" onclick="output(current_result.value, '1/x')">1/x</button>
+                    <button class="btn" onclick="output(current_result.value, 'x^2')">x<sup>2</sup></button>
+                    <button class="btn" onclick="output(current_result.value, 'sqrt(x)')">√ x</button>
+                    <button class="btn" onclick="addOperator('/')">÷</button>
                 </div>
                 <div class="row">
-                    <button class="btn" onclick="updateQuery('4')">4</button>
-                    <button class="btn" onclick="updateQuery('5')">5</button>
-                    <button class="btn" onclick="updateQuery('6')">6</button>
-                    <button class="btn" onclick="updateQuery('*')">x</button>
-                    <button class="btn" onclick="updateQuery('/')">÷</button>
+                    <button class="btn" onclick="addOperands('7')">7</button>
+                    <button class="btn" onclick="addOperands('8')">8</button>
+                    <button class="btn" onclick="addOperands('9')">9</button>
+                    <button class="btn" onclick="addOperator('*')">x</button>
                 </div>
                 <div class="row">
-                    <button class="btn" onclick="updateQuery('1')">1</button>
-                    <button class="btn" onclick="updateQuery('2')">2</button>
-                    <button class="btn" onclick="updateQuery('3')">3</button>
-                    <button class="btn" onclick="updateQuery('+')">+</button>
-                    <button class="btn" onclick="updateQuery('-')">-</button>
+                    <button class="btn" onclick="addOperands('4')">4</button>
+                    <button class="btn" onclick="addOperands('5')">5</button>
+                    <button class="btn" onclick="addOperands('6')">6</button>
+                    <button class="btn" onclick="addOperator('-')">-</button>
                 </div>
                 <div class="row">
-                    <button class="btn" onclick="updateQuery('.')">.</button>
+                    <button class="btn" onclick="addOperands('1')">1</button>
+                    <button class="btn" onclick="addOperands('2')">2</button>
+                    <button class="btn" onclick="addOperands('3')">3</button>
+                    <button class="btn" onclick="addOperator('+')">+</button>
+                </div>
+                <div class="row">
+                    <button class="btn" onclick="changeSign()">±</button>
                     <button class="btn" onclick="updateQuery('0')">0</button>
-                    <button class="btn" onclick="updateQuery('±')">±</button>
-                    <button type="submit" onclick="output(query.value)" class="btn btn-wide">ENTER</button>
+                    <button class="btn" onclick="updateQuery('.')">.</button>
+                    <button type="submit" onclick="output(query.value, '=')" class="btn equal">=</button>
                 </div>
              </div>
         </div>
