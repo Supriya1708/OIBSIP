@@ -3,9 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Virat: Pride Of India</title>
+    <link rel="stylesheet" href="tribute_page.css">
 </head>
 <body>
-    
+    <header class="title">Virat Kohli: Inspiring Generations</header>
+    <main class="container">
+        <img src="virat q2.png" alt="Virat" class="gallery">
+        <nav class="nav-bar">
+            <ul class="section-items">
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#early-life">Early Life</a></li>
+                <li><a href="#cricket-career">Cricket Career</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#legacy">Legacy</a></li>
+                <li><a href="#quotes">Quotes</a></li>
+                <li><a href="#sources">Sources</a></li>
+            </ul>
+        </nav>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>Virat Kohli, born on November 5, 1988, is one of the most accomplished and influential cricketers in the world. He is known for his exceptional batting skills, dedication, and leadership on the cricket field.</p>
+        </section>
+
+        <section id="early-life">
+            <h2>Early Life</h2>
+            <p>Virat Kohli was born in Delhi, India. His early passion for cricket led him to represent Delhi in various age-group cricket tournaments. His talent and determination were evident from a young age.</p>
+        </section>
+
+        <section id="cricket-career">
+            <h2>Cricket Career</h2>
+            <p>Virat Kohli made his international debut for the Indian cricket team in August 2008. Over the years, he has achieved numerous records and milestones, including becoming the fastest player to score 8,000, 9,000, and 10,000 runs in One Day Internationals (ODIs).</p>
+        </section>
+
+        <section id="achievements">
+            <h2>Achievements</h2>
+            <p>Throughout his career, Virat Kohli has received several awards, including the Sir Garfield Sobers Trophy for ICC Cricketer of the Year multiple times. He has consistently been among the world's top batsmen in all formats of the game.</p>
+        </section>
+
+        <section id="leadership">
+            <h2>Leadership</h2>
+            <p>Virat Kohli has also served as the captain of the Indian cricket team. Under his leadership, the team has achieved remarkable success, including significant victories in Test cricket and ODIs.</p>
+        </section>
+
+        <section id="legacy">
+            <h2>Legacy</h2>
+            <p>Virat Kohli's legacy extends beyond the cricket field. He is an inspiration to aspiring cricketers and sports enthusiasts worldwide. His commitment to fitness and discipline has set new standards in Indian cricket.</p>
+        </section>
+
+        <section id="quotes">
+            <h2>Quotes</h2>
+            <blockquote>
+                "I never stop working hard. I never stop believing. I never stop fighting."
+            </blockquote>
+            <blockquote>
+                "The only thing that I have seen is that people who have achieved a lot in their careers, they have been extremely disciplined in their life."
+            </blockquote>
+        </section>
+
+        <section id="sources">
+            <h2>Sources</h2>
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Virat_Kohli">Wikipedia - Virat Kohli</a></li>
+                <!-- Add more sources and references here -->
+            </ul>
+        </section>
+    </main>
+    <script>
+        if (!window.location.hash) {
+            window.location.hash = "#introduction";
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll(".section-items li a");
+            const sections = document.querySelectorAll("section");
+
+            links.forEach((link, index) => {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+
+                    // Remove "active" class from all links and hide all sections
+                    links.forEach((l) => l.classList.remove("active"));
+                    sections.forEach((section) => section.classList.remove("active"));
+
+                    // Add "active" class to the clicked link and show the corresponding section
+                    link.classList.add("active");
+                    window.location.hash = link.getAttribute("href")
+                    sections[index].classList.add("active");
+                });
+            });
+        });
+
+    </script>
 </body>
 </html>

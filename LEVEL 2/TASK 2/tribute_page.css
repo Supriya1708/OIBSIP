@@ -4,3 +4,66 @@
     box-sizing: border-box;
     font-family: 'Poppins', 'sans-serif';
 }
+body{
+    background-color: #b9bbb6;
+}
+.title{
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.gallery{
+    display: block;
+    margin: 0 auto;
+}
+
+nav{
+    margin-top: 5rem;
+    font-size: large;
+    line-height: 2rem;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+nav ul{
+    list-style: none;
+    display: inline;
+}
+
+.section-items{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3rem;
+}
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    margin-right: 3rem;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    box-shadow: 1px 2px 2px,
+                1px 2px 2px;
+}
+
+nav .active{
+    color: rgb(91, 153, 177);
+}
+
+main section{
+    display: none;
+}
+
+section:target {
+    margin: 5rem auto;
+    width: 40%;
+    display: block;
+    text-align: center;
+}
+
+section h2{
+    margin-bottom: 2rem;
+}
