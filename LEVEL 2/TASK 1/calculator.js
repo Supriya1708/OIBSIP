@@ -1,41 +1,49 @@
-
 var isNew = true;
 var equalClicked = false;
+var inputElement = document.querySelector('#query');
+var outputElement = document.querySelector('#current_result');
+var deleteButton = document.getElementById('del');
 
 function output(query, operator){
-    var current_number = document.querySelector('#current_result');
-    var inputElement = document.querySelector('#query');
     var lastElement = inputElement.value.slice(inputElement.length-1, 1)
     switch(operator){
         case '1/x':
-            current_number.value = '';
+            outputElement.value = '';
             if (isLastCharacterNotANumber(lastElement))
                 inputElement.value = inputElement.value + 1/query
             else
                 inputElement.value = 1/query
+            isNew = false;
+            equalClicked = false;
+            disableDeleteStatus();
             break;
         case 'x^2':
-            current_number.value = '';
+            outputElement.value = '';
             if (isLastCharacterNotANumber(lastElement))
                 inputElement.value = inputElement.value + query * query
             else
                 inputElement.value = query * query
+            isNew = false;
+            equalClicked = false;
+            disableDeleteStatus();
             break;
         case 'sqrt(x)':
-            current_number.value = '';
+            outputElement.value = '';
             if (isLastCharacterNotANumber(lastElement))
                 inputElement.value = inputElement.value + Math.sqrt(query)
             else
                 inputElement.value = Math.sqrt(query)
+            isNew = false;
+            equalClicked = false;
+            disableDeleteStatus();
             break;
         default:
-            query = query + current_number.value
+            query = query + outputElement.value
             inputElement.value = query
             query = preProcessExpression(query)
-            current_number.value = eval(query);
-            var deleteButton = document.getElementById('del');
-            deleteButton.disabled = true;
+            outputElement.value = eval(query);
             equalClicked = true;
+            disableDeleteStatus();
             isNew=true;
     } 
 }
@@ -55,52 +63,53 @@ function isLastCharacterNotANumber(inputString) {
 
 
 function clearQuery(value){
-    var inputElement = document.querySelector('#query');
-    var current_number = document.querySelector('#current_result')
     switch(value){
         case 'CE':
-            current_number.value = ''
+            outputElement.value = ''
             break;
         case 'C':
             inputElement.value = ''
-            current_number.value = ''
+            outputElement.value = ''
             isNew = true
             break
         case 'DEL':
-            current_number.value = current_number.value.slice(0, -1)
+            outputElement.value = outputElement.value.slice(0, -1)
             break
     }
 }
 
 function addOperator(operator){
-    var inputElement = document.querySelector('#query');
-    var current_number = document.querySelector('#current_result');
     if (isNew){
-        inputElement.value = current_number.value + operator
+        inputElement.value = outputElement.value + operator
         isNew = false;
     }else{
-        console.log(inputElement.value)
-        inputElement.value = inputElement.value + current_number.value + operator
+        inputElement.value = inputElement.value + outputElement.value + operator
     }
-    current_number.value = ''
-    console.log(inputElement.value)
+    outputElement.value = ''
 }
 
 function addOperands(value){
     if (isNew){
-        var inputElement = document.querySelector('#query');
         inputElement.value = ''
     }
-    var current_number = document.querySelector('#current_result');
-    current_number.value = current_number.value + value;
+    outputElement.value = outputElement.value + value;
+    equalClicked = false;
+    disableDeleteStatus();
 }
 
 function changeSign(){
-    var current_number = document.querySelector('#current_result');
-    number = parseInt(current_number.value)
+    number = parseInt(outputElement.value)
     if (number>0){
-        current_number.value = '-' + current_number.value;
+        outputElement.value = '-' + outputElement.value;
     }else{
-        current_number.value = current_number.value.slice(1)
+        outputElement.value = outputElement.value.slice(1)
+    }
+}
+
+function disableDeleteStatus(){
+    if (equalClicked){
+        deleteButton.disabled = true;
+    }else{
+        deleteButton.disabled = false;
     }
 }
