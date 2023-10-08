@@ -58,7 +58,7 @@ function preProcessExpression(query){
 
 function isLastCharacterNotANumber(inputString) {
     // Use a regular expression to match the last character
-    return !/\d/.test(inputString);
+    return /\d/.test(inputString);
 }
 
 
