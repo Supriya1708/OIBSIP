@@ -20,6 +20,8 @@ body{
     margin: 0 auto;
 }
 
+/* applying styling to navbar */
+
 nav{
     margin-top: 5rem;
     font-size: large;
@@ -36,12 +38,13 @@ nav ul{
 
 .section-items{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 3rem;
 }
 nav ul li a{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-decoration: none;
-    color: black;
+    color: rgb(103, 29, 29);
     margin-right: 3rem;
     border-radius: 1rem;
     padding: 0.5rem;
@@ -52,6 +55,8 @@ nav ul li a{
 nav .active{
     color: rgb(91, 153, 177);
 }
+
+/* applying styling to main section */
 
 main section{
     display: none;
@@ -66,4 +71,44 @@ section:target {
 
 section h2{
     margin-bottom: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+section p{
+    margin-bottom: 2rem;
+    font-family:cursive;
+}
+
+blockquote{
+    font-family:monospace;
+}
+
+#sources ul, #why-virat ul{
+    list-style: none;
+    line-break: 2rem; 
+}
+
+#sources ul li, #why-virat ul li{
+    font-family:cursive;
+}
+#sources ul a{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(33, 28, 28)
+}
+
+/* A divider to divide main and footer sections  */
+
+.division{
+    border: 1px solid black;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Appyling styling to footer section  */
+
+footer{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    margin: 2rem;
 }

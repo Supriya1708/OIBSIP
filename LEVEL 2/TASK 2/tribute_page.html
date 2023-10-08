@@ -12,7 +12,7 @@
         <img src="virat q2.png" alt="Virat" class="gallery">
         <nav class="nav-bar">
             <ul class="section-items">
-                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#introduction" id="intro">Introduction</a></li>
                 <li><a href="#early-life">Early Life</a></li>
                 <li><a href="#cricket-career">Cricket Career</a></li>
                 <li><a href="#achievements">Achievements</a></li>
@@ -20,6 +20,7 @@
                 <li><a href="#legacy">Legacy</a></li>
                 <li><a href="#quotes">Quotes</a></li>
                 <li><a href="#sources">Sources</a></li>
+                <li><a href="#why-virat">Why Virat?</a></li>
             </ul>
         </nav>
         <section id="introduction">
@@ -55,24 +56,44 @@
         <section id="quotes">
             <h2>Quotes</h2>
             <blockquote>
-                "I never stop working hard. I never stop believing. I never stop fighting."
+                ☛ "I never stop working hard. I never stop believing. I never stop fighting."
             </blockquote>
             <blockquote>
-                "The only thing that I have seen is that people who have achieved a lot in their careers, they have been extremely disciplined in their life."
+                ☛ "The only thing that I have seen is that people who have achieved a lot in their careers, they have been extremely disciplined in their life."
             </blockquote>
         </section>
-
         <section id="sources">
             <h2>Sources</h2>
             <ul>
-                <li><a href="https://en.wikipedia.org/wiki/Virat_Kohli">Wikipedia - Virat Kohli</a></li>
+                <li>Click Me for more info about Virat.<br/><br/>
+                    <span>☛ </span>
+                    <a href="https://en.wikipedia.org/wiki/Virat_Kohli">Wikipedia - Virat Kohli</a>
+                </li>
                 <!-- Add more sources and references here -->
             </ul>
         </section>
+        <section id="why-virat">
+            <h2> Why Virat Is My Inspiration? </h2>
+            <ul>
+                <li>Exceptional Work Ethic</li>
+                <li>Resilience and Determination</li>
+                <li>Leadership Skills</li>
+                <li>Consistent Performance</li>
+                <li>Consistent Performance</li>
+            </ul>
+        </section>
     </main>
+    <div class="division"></div>
+    <footer>
+        <!-- Footer content goes here -->
+        Made by Supriya Bollampally.<br/>
+    </footer>
     <script>
         if (!window.location.hash) {
+            console.log("In here")
             window.location.hash = "#introduction";
+            const present = document.querySelector(".section-items li #intro");
+            present.classList.add("active")
         }
         document.addEventListener("DOMContentLoaded", function () {
             const links = document.querySelectorAll(".section-items li a");
